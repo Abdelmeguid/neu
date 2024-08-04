@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Assuming you're using axios for API calls
 import globals from "../app/globals.css"
+import PieChart from './PieChart';
 
 
 
@@ -61,10 +62,11 @@ function Admin() {
 
     /////////////////////////////////////////////
 
-    <div >
+    <div  >
       
       <h1 className='x-auto mt-3 text-3xl font-semibold'>Admin Page</h1>
-      <table className="userTable " style={{marginLeft:"1%",marginTop:"4%"}}>
+      <div  className='flex flex-row items-center justify-start gap-12'>
+      <table className="userTable " style={{marginLeft:"1%",marginTop:"0%"}}>
         <thead>
           <tr>
             <th>User Name</th>
@@ -80,6 +82,10 @@ function Admin() {
           ))}
         </tbody>
       </table>
+      <div className='w-1/3'>
+      <PieChart data={users} />
+      </div>
+      </div>
     </div>
   );
 }
