@@ -1,7 +1,7 @@
 'use client'
 import React, { useState, useEffect } from 'react';
 import axios from 'axios'; // Assuming you're using axios for API calls
-import globals from "../app/globals.css"
+
 import PieChart from './PieChart';
 
 
@@ -66,7 +66,9 @@ function Admin() {
       
       <h1 className='x-auto mt-3 text-3xl font-semibold'>Admin Page</h1>
       <div  className='flex flex-row items-center justify-start gap-12'>
-      <table className="userTable " style={{marginLeft:"1%",marginTop:"0%"}}>
+        {/* bzh Noted : any class puted in global.css not appear in deployment unless you put the name of element in global .css or use id 
+          but it appear only in production or deployment because if you put the css file in p-ackage.json in deployment line */}
+      <table  className='userTable' style={{marginLeft:"1%",marginTop:"0%"}}>
         <thead>
           <tr>
             <th>User Name</th>
